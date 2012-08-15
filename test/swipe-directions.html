@@ -1,0 +1,50 @@
+<!DOCTYPE 5>
+<html>
+  <head>
+    <title>Gesture - swipe directions</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="../build/build.css" />
+    <link rel="stylesheet" href="touch.css" />
+    <style>
+      img {
+        position: absolute;
+        width: 150px;
+        -webkit-transition: left 300ms ease-out, top 300ms ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <img style="left: 350px; top: 200px" src="http://laughingsquid.com/wp-content/uploads/mac-maru-20110721-083817.jpg" id="maru" />
+
+    <script src="../build/build.js"></script>
+    <script src="touch.js"></script>
+    <script>
+      touch();
+      var gesture = require('gesture');
+      var img = document.getElementById('maru');
+
+      gesture(img)
+      .on('swipe up', up)
+      .on('swipe down', down)
+      .on('swipe left', left)
+      .on('swipe right', right);
+
+      function up(e) {
+        img.style.top = parseInt(img.style.top, 10) - e.distance;
+      }
+
+      function down(e) {
+        img.style.top = parseInt(img.style.top, 10) + e.distance;
+      }
+
+      function left(e) {
+        img.style.left = parseInt(img.style.left, 10) - e.distance;
+      }
+
+      function right(e) {
+        img.style.left = parseInt(img.style.left, 10) + e.distance;
+      }
+
+    </script>
+  </body>
+</html>

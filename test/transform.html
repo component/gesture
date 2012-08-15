@@ -1,0 +1,34 @@
+<!DOCTYPE 5>
+<html>
+  <head>
+    <title>Gesture - transform</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="../build/build.css" />
+    <link rel="stylesheet" href="touch.css" />
+    <style>
+      img {
+        position: absolute;
+        width: 150px;
+        -webkit-transition: left 200ms ease-out, top 200ms ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <img style="left: 350px; top: 200px" src="http://laughingsquid.com/wp-content/uploads/mac-maru-20110721-083817.jpg" id="maru" />
+
+    <script src="../build/build.js"></script>
+    <script src="touch.js"></script>
+    <script>
+      touch();
+      var gesture = require('gesture');
+      var img = document.getElementById('maru');
+
+      gesture(img)
+      .on('transform', function(e){
+        var r = e.rotation.toFixed(2);
+        var s = e.scale.toFixed(2);
+        img.style['-webkit-transform'] = 'rotate(' + r + 'deg) scale(' + s + ')';
+      });
+    </script>
+  </body>
+</html>
