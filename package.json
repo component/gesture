@@ -2,7 +2,7 @@
   "name": "gesture-component",
   "description": "Higher level gesture API built on hammer.js",
   "keywords": ["gesture", "hammer", "swipe", "pinch", "zoom", "rotate"],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "emitter-component": "*",
     "hammerjs": "0.6.1"
