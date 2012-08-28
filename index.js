@@ -20,67 +20,56 @@ module.exports = function(el){
 
   // drag start
   hammer.ondragstart = function(e){
-    e.originalEvent.preventDefault();
     self.emit('drag start', e);
   };
 
   // drag
   hammer.ondrag = function(e){
-    e.originalEvent.preventDefault();
     self.emit('drag', e);
   };
 
   // drag end
   hammer.ondragend = function(e){
-    e.originalEvent.preventDefault();
     self.emit('drag end', e);
   };
 
   // tag
   hammer.ontap = function(e){
-    e.originalEvent.preventDefault();
     self.emit('tap', e);
   };
 
   // double tag
   hammer.ondoubletap = function(e){
-    e.originalEvent.preventDefault();
     self.emit('double tap', e);
   };
 
   // hold
   hammer.onhold = function(e){
-    e.originalEvent.preventDefault();
     self.emit('hold', e);
   };
 
   // release
   hammer.onrelease = function(e){
-    e.originalEvent.preventDefault();
     self.emit('release', e);
   };
 
   // transform start
   hammer.ontransformstart = function(e){
-    e.originalEvent.preventDefault();
     self.emit('transform start', e);
   };
 
   // transform
   hammer.ontransform = function(e){
-    e.originalEvent.preventDefault();
     self.emit('transform', e);
   };
 
   // transform end
   hammer.ontransformend = function(e){
-    e.originalEvent.preventDefault();
     self.emit('transform end', e);
   };
 
   // swipe left / right
   hammer.onswipe = function(e){
-    e.originalEvent.preventDefault();
     self.emit('swipe', e);
     self.emit('swipe ' + e.direction, e);
   };
