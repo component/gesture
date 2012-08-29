@@ -5,7 +5,7 @@
   "version": "0.0.2",
   "dependencies": {
     "emitter-component": "*",
-    "hammerjs": "0.6.1"
+    "hammerjs": "0.6.2"
   },
   "component": {
     "scripts": {
