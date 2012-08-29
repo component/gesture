@@ -33,6 +33,12 @@ function Gesture(el) {
 }
 
 /**
+ * Inherits from `Emitter.prototype`.
+ */
+
+Gesture.prototype.__proto__ = Emitter.prototype;
+
+/**
  * Bind to hammer.js events.
  *
  * @api private
@@ -99,9 +105,13 @@ Gesture.prototype.bind = function(){
   };
 };
 
-
 /**
- * Inherits from `Emitter.prototype`.
+ * Unbind events.
+ *
+ * @api public
  */
 
-Gesture.prototype.__proto__ = Emitter.prototype;
+Gesture.prototype.unbind = function(){
+  this.hammer.destroy();
+};
+
