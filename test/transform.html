@@ -23,12 +23,18 @@
       var gesture = require('gesture');
       var img = document.getElementById('maru');
 
-      gesture(img)
-      .on('transform', function(e){
+      var maru = gesture(img);
+
+      maru.on('transform', function(e){
         var r = e.rotation.toFixed(2);
         var s = e.scale.toFixed(2);
         img.style['-webkit-transform'] = 'rotate(' + r + 'deg) scale(' + s + ')';
       });
+
+      setTimeout(function(){
+        console.log('unbinding');
+        maru.unbind();
+      }, 5000);
     </script>
   </body>
 </html>
