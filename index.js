@@ -10,13 +10,37 @@ var Hammer = require('hammer')
  * Bind gestures to `el`.
  *
  * @param {Element} el
- * @return {Emitter}
+ * @return {Gesture}
  * @api public
  */
 
 module.exports = function(el){
-  var hammer = new Hammer(el);
-  var self = new Emitter;
+  return new Gesture(el);
+};
+
+/**
+ * Initalize a new `Gesture` with the given `el`.
+ *
+ * @param {Element} el
+ * @api public
+ */
+
+function Gesture(el) {
+  Emitter.call(this);
+  this.hammer = new Hammer(el);
+  this.el = el;
+  this.bind();
+}
+
+/**
+ * Bind to hammer.js events.
+ *
+ * @api private
+ */
+
+Gesture.prototype.bind = function(){
+  var self = this;
+  var hammer = this.hammer;
 
   // drag start
   hammer.ondragstart = function(e){
@@ -73,6 +97,11 @@ module.exports = function(el){
     self.emit('swipe', e);
     self.emit('swipe ' + e.direction, e);
   };
-
-  return self;
 };
+
+
+/**
+ * Inherits from `Emitter.prototype`.
+ */
+
+Gesture.prototype.__proto__ = Emitter.prototype;
