@@ -4,7 +4,8 @@
  */
 
 var Hammer = require('hammer')
-  , Emitter = require('emitter');
+  , Emitter = require('emitter')
+  , inherit = require('inherit');
 
 /**
  * Bind gestures to `el`.
@@ -36,7 +37,7 @@ function Gesture(el) {
  * Inherits from `Emitter.prototype`.
  */
 
-Gesture.prototype.__proto__ = Emitter.prototype;
+inherit(Gesture, Emitter);
 
 /**
  * Bind to hammer.js events.
