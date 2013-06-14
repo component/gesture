@@ -5,7 +5,7 @@
 
 var Hammer = require('hammer')
   , Emitter = require('emitter')
-  , inherit = require('inherit);
+  , inherit = require('inherit');
 
 /**
  * Bind gestures to `el`.
