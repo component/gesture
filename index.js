@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -27,17 +26,16 @@ module.exports = function(el){
  */
 
 function Gesture(el) {
-  Emitter.call(this);
   this.hammer = new Hammer(el);
   this.el = el;
   this.bind();
 }
 
 /**
- * Inherits from `Emitter.prototype`.
+ * Mixin Emitter
  */
 
-inherit(Gesture, Emitter);
+Emitter(Gesture.prototype);
 
 /**
  * Bind to hammer.js events.
