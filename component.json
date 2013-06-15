@@ -13,7 +13,6 @@
   "dependencies": {
     "component/emitter": "*",
     "component/hammer.js": "0.6.2",
-    "component/inherit": "*"
   },
   "scripts": [
     "index.js"
