@@ -12,7 +12,7 @@
   "version": "0.0.3",
   "dependencies": {
     "component/emitter": "*",
-    "component/hammer.js": "0.6.2",
+    "component/hammer.js": "0.6.2"
   },
   "scripts": [
     "index.js"
