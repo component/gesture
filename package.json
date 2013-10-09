@@ -1,7 +1,14 @@
 {
   "name": "gesture-component",
   "description": "Higher level gesture API built on hammer.js",
-  "keywords": ["gesture", "hammer", "swipe", "pinch", "zoom", "rotate"],
+  "keywords": [
+    "gesture",
+    "hammer",
+    "swipe",
+    "pinch",
+    "zoom",
+    "rotate"
+  ],
   "version": "0.0.3",
   "dependencies": {
     "emitter-component": "*",
@@ -11,5 +18,9 @@
     "scripts": {
       "gesture/index.js": "index.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/gesture.git"
   }
 }
